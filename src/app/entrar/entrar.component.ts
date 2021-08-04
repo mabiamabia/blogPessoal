@@ -9,7 +9,18 @@ export class EntrarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): {
 
+    window.scroll(0,0)
 }
+entrar(){
+  this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) =>
+    this.userLogin = resp
+  this.router.navigate(['/inicio'])
+  ), erro => {
+    if (erro.status == 500) {
+
+    }
+  }
+}
+
